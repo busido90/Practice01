@@ -21,7 +21,7 @@ if (!empty($_POST)) {
 	);
 	mysqli_query($db, $sql) or die(mysqli_error($db));
 	unset($_SESSION['join']);
-
+	
 	header('Location: thanks.php');
 	exit();
 }
