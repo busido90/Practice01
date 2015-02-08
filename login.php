@@ -4,12 +4,14 @@ require('dbconnect.php');
 session_start();
 
 if (!empty($_COOKIE['email'])) {
-	if ($_COOKIE['email'] == '') {
+	if ($_COOKIE['email'] != '') {
 		$_POST['email'] = $_COOKIE['email'];
 		$_POST['password'] = $_COOKIE['password'];
 		$_POST['save'] = 'on';
 	}
 }
+
+// var_dump($_COOKIE['email']);
 
 if (!empty($_POST)) {
 	if ($_POST['email'] != '' && $_POST['password'] != '') {
